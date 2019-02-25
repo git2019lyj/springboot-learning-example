@@ -23,6 +23,13 @@ public class BookServiceImpl implements BookService {
 
     @Override
     public List<Book> findAll() {
+        Book book = new Book();
+        book.setId(1l);
+        book.setIntroduction("hello");
+        book.setName("一千零一年");
+        book.setWriter("张珊");
+
+        BOOK_DB.put(1l,book);
         return new ArrayList<>(BOOK_DB.values());
     }
 
